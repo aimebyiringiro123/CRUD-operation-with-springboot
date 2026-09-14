@@ -20,6 +20,12 @@ public class SoftwareEngineerController {
     @GetMapping  // FOR RETRIEVE
     public List<SoftwareEngineer> getEngineers(){
         return softwareEngineerService.getAllSoftwareEngineer();
+    }
 
+    @PostMapping
+    public void addNewSoftwareEngineer(
+            @RequestBody SoftwareEngineer softwareEngineer
+    ){
+        softwareEngineerService.insertSoftwareEngineer(softwareEngineer);
     }
 }

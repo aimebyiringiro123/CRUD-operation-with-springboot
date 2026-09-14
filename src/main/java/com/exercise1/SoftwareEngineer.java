@@ -12,7 +12,7 @@ public class SoftwareEngineer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
     private String techStack;
 
@@ -22,7 +22,7 @@ public class SoftwareEngineer {
     }
 
     //contructor with arguments
-    public SoftwareEngineer(int id, String name, String techStack) {
+    public SoftwareEngineer(Integer id, String name, String techStack) {
         this.id = id;
         this.name = name;
         this.techStack = techStack;
@@ -30,10 +30,10 @@ public class SoftwareEngineer {
 
 
     //getters and setters
-    public int getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
