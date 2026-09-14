@@ -8,24 +8,18 @@ import java.util.List;
 @RequestMapping("api/v1/software-engineers")
 public class SoftwareEngineerController {
 
+    public final SoftwareEngineerService softwareEngineerService;
+
+    public SoftwareEngineerController(SoftwareEngineerService softwareEngineerService) {
+        this.softwareEngineerService = softwareEngineerService;
+    }
 
     //@DeleteMapping for deleting
     //@PostMapping for posting
 
     @GetMapping  // FOR RETRIEVE
     public List<SoftwareEngineer> getEngineers(){
-        return List.of(
-                new SoftwareEngineer(
-                        1,
-                        "Aime",
-                        "js, java, react"
-                ),
+        return softwareEngineerService.getAllSoftwareEngineer();
 
-                new SoftwareEngineer(
-                        2,
-                        "Arson",
-                        "python, java, TailwindCss"
-                )
-        );
     }
 }
