@@ -22,10 +22,20 @@ public class SoftwareEngineerController {
         return softwareEngineerService.getAllSoftwareEngineer();
     }
 
-    @PostMapping
+    @GetMapping("{id}")  // FOR RETRIEVE by Id
+    public SoftwareEngineer getEngineerById(@PathVariable Integer id){
+        return softwareEngineerService.getSoftwareEngineerById(id);
+    }
+
+    @PostMapping // INSERT
     public void addNewSoftwareEngineer(
             @RequestBody SoftwareEngineer softwareEngineer
     ){
         softwareEngineerService.insertSoftwareEngineer(softwareEngineer);
+    }
+
+    @DeleteMapping("/{id}") //DELETE
+    public void deleteSoftwareEngineerById(@PathVariable Integer id){
+        softwareEngineerService.deleteSoftwareEngineerById(id);
     }
 }

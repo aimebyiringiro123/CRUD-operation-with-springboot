@@ -20,4 +20,17 @@ public class SoftwareEngineerService {
     public void insertSoftwareEngineer(SoftwareEngineer softwareEngineer) {
         softwareEngineerRepository.save(softwareEngineer);
     }
+
+
+    public SoftwareEngineer getSoftwareEngineerById(Integer id) {
+        return softwareEngineerRepository.findById(id).orElseThrow(() -> new IllegalStateException(id + " not found"));
+    }
+
+
+    public void deleteSoftwareEngineerById(Integer id) {
+        if (!softwareEngineerRepository.existsById(id)) {
+            throw new IllegalStateException(id + " not found");
+        }
+        softwareEngineerRepository.deleteById(id);
+    }
 }
